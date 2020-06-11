@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/update?id={{task.0}}" method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" value="{{task.1}}" class="form-control" name="carName" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Brand</label>
+        <input type="text" value="{{task.2}}" class="form-control" name="carBrand" placeholder="Marca">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Color</label>
+        <input type="text" value="{{task.3}}" class="form-control" name="carColor" placeholder="Color">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Price</label>
+        <input type="text" value="{{task.4}}" class="form-control" name="carPrice" placeholder="Precio">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Category</label>
+        <input type="text" value="{{task.5}}" class="form-control" name="carCategory" placeholder="Categoria">
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+{% endblock %}

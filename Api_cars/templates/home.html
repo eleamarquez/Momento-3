@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Color</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% for task in tasks %}
+        <tr>
+            <td>{{task.0}}</td>
+            <td>{{task.1}}</td>
+            <td>{{task.2}}</td>
+            <td>{{task.3}}</td>
+            <td>{{task.4}}</td>
+            <td>{{task.5}}</td>
+            <td>
+              <div class="row">
+                <div class="col-6">
+                  <a href="/edit?id={{task.0}}" class="btn btn-primary">Edit</a>
+                </div>
+                <div class="col-6">
+                  <a href="/delete?id={{task.0}}" class="btn btn-danger" onclick="return ConfirmDelete()">Delete</a>
+                </div>
+              </div>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
